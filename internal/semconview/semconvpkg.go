@@ -97,7 +97,7 @@ func loadPackage(ctx context.Context, pkgPath string) (*packages.Package, error)
 
 	pkg := pkgs[0]
 	for _, pkgErr := range pkg.Errors {
-		multierror.Append(err, pkgErr)
+		err = multierror.Append(err, pkgErr)
 	}
 	return pkg, err
 }
