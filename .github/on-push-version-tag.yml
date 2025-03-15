@@ -1,0 +1,16 @@
+name: Release workflow
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release-binary:
+    uses: ./.github/workflows/wf-release-binary.yml
+    secrets: inherit
+
+  release-container:
+    uses: ./.github/workflows/wf-build-container.yml
+    secrets: inherit
+    with:
+      needs-push: true

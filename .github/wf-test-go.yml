@@ -1,0 +1,37 @@
+name: test-go
+
+on:
+  workflow_call:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: parse-gomod
+        uses: Arthur1/parse-gomod-action@v0
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ steps.parse-gomod.outputs.toolchain-go-version }}
+      - uses: golangci/golangci-lint-action@v6
+        with:
+          args: --timeout=10m
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: parse-gomod
+        uses: Arthur1/parse-gomod-action@v0
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ steps.parse-gomod.outputs.toolchain-go-version }}
+      - run: |
+          go install github.com/mfridman/tparse@latest
+      - run: |
+          set -o pipefail
+          go test ./... -cover -json > ./go-test.out
+      - if: always()
+        run: |
+          go tool tparse -all -file ./go-test.out
+          go tool tparse -all -file ./go-test.out -format markdown >> "$GITHUB_STEP_SUMMARY"
