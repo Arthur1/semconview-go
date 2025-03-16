@@ -1,7 +1,6 @@
 package semconview
 
 import (
-	"context"
 	"path/filepath"
 	"testing"
 
@@ -14,7 +13,7 @@ import (
 
 func TestSemconvPackageResolver_resolveAttrKeyFromConst(t *testing.T) {
 	r := newSemconvPackageResolver()
-	ctx := context.Background()
+	ctx := t.Context()
 
 	cases := []struct {
 		inPkgPath   string
@@ -71,7 +70,7 @@ func TestSemconvPackageResolver_resolveAttrKeyFromConst(t *testing.T) {
 
 func TestSemconvPackageResolver_resolveAttrKeyFromFunc(t *testing.T) {
 	r := newSemconvPackageResolver()
-	ctx := context.Background()
+	ctx := t.Context()
 
 	cases := []struct {
 		inPkgPath   string
