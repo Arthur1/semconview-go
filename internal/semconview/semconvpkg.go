@@ -67,6 +67,7 @@ func (r *semconvPackageResolver) resolveAttrKeyFromConst(ctx context.Context, pk
 }
 
 func analyzePackage(ctx context.Context, pkgPath packagePath) (semconvPackage, error) {
+	slog.InfoContext(ctx, fmt.Sprintf("analyze package: %s", pkgPath))
 	pkg, err := loadPackage(ctx, pkgPath)
 	if err != nil {
 		return semconvPackage{}, err

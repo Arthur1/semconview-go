@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log/slog"
 	"os"
 
 	"github.com/Arthur1/semconview-go/internal/semconview"
@@ -13,11 +14,13 @@ import (
 
 type ListCmd struct {
 	Pattern []string `arg:"" help:"Glob pattern to match Go files. Default is **/*.go" default:"**/*.go"`
-	Output  string   `help:"Output format" enum:"json,yaml,table" default:"table"`
+	Output  string   `help:"Output format (json, yaml, table). Default is table mode." enum:"json,yaml,table" default:"table"`
 }
 
 func (c *ListCmd) Run(globals *Globals) error {
 	ctx := context.Background()
+	slog.SetDefault(newLogger(globals.Verbose))
+
 	result, err := semconview.AnalyzeSemconvDependencies(ctx, c.Pattern)
 	if err != nil {
 		return err

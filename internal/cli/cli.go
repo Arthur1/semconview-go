@@ -5,7 +5,8 @@ import (
 )
 
 type Globals struct {
-	Version VersionFlag `name:"version" short:"v" help:"print version and quit"`
+	Version VersionFlag `name:"version" short:"v" help:"Print version and quit"`
+	Verbose bool        `help:"Make more talkative. Disabled by default." default:"false"`
 }
 
 type VersionFlag string
