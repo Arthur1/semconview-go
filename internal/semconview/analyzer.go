@@ -83,6 +83,7 @@ func findGoFiles(globs []string) ([]string, error) {
 }
 
 func parseFile(ctx context.Context, filePath string) ([]SemconvAttribute, error) {
+	slog.InfoContext(ctx, fmt.Sprintf("parsing file: %s", filePath))
 	fset := token.NewFileSet()
 	file, err := parser.ParseFile(fset, filePath, nil, parser.AllErrors)
 	if err != nil {
