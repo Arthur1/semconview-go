@@ -1,7 +1,6 @@
 package semconview
 
 import (
-	"context"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -9,7 +8,7 @@ import (
 )
 
 func TestAnalyzeSemconvDependencies(t *testing.T) {
-	ctx := context.Background()
+	ctx := t.Context()
 	t.Run("Test1", func(t *testing.T) {
 		got, err := AnalyzeSemconvDependencies(ctx, []string{"../../example/test1/*.go"})
 		require.NoError(t, err)
