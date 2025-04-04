@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.2.1](https://github.com/Arthur1/semconview-go/compare/v0.2.0...v0.2.1) - 2025-04-04
+- chore(deps): update actions/create-github-app-token action to v2 by @renovate in https://github.com/Arthur1/semconview-go/pull/15
+
 ## [v0.2.0](https://github.com/Arthur1/semconview-go/compare/v0.1.0...v0.2.0) - 2025-03-16
 - test: use test context by @Arthur1 in https://github.com/Arthur1/semconview-go/pull/10
 - feat: add verbose option to print info log by @Arthur1 in https://github.com/Arthur1/semconview-go/pull/12
