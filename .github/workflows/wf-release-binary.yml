@@ -14,7 +14,7 @@ jobs:
       - id: parse-gomod
         uses: Arthur1/parse-gomod-action@v0
       - id: github_token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v2
         with:
           app-id: 364898
           private-key: ${{ secrets.ARTHUR1_BOT_PRIVATE_KEY }}
