@@ -11,7 +11,7 @@ require (
 	github.com/rodaine/table v1.3.0
 	github.com/stretchr/testify v1.10.0
 	go.opentelemetry.io/otel v1.35.0
-	golang.org/x/tools v0.31.0
+	golang.org/x/tools v0.33.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -30,8 +30,8 @@ require (
 	github.com/rivo/uniseg v0.4.7 // indirect
 	go.opentelemetry.io/otel/trace v1.35.0 // indirect
 	golang.org/x/mod v0.24.0 // indirect
-	golang.org/x/sync v0.12.0 // indirect
-	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/sync v0.14.0 // indirect
+	golang.org/x/sys v0.33.0 // indirect
 )
 
 tool github.com/mfridman/tparse
