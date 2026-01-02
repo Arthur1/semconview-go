@@ -9,7 +9,7 @@ require (
 	github.com/bmatcuk/doublestar/v4 v4.8.1
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/rodaine/table v1.3.0
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.1
 	go.opentelemetry.io/otel v1.35.0
 	golang.org/x/tools v0.31.0
 	gopkg.in/yaml.v3 v3.0.1
