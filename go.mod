@@ -6,7 +6,7 @@ toolchain go1.24.1
 
 require (
 	github.com/alecthomas/kong v1.9.0
-	github.com/bmatcuk/doublestar/v4 v4.8.1
+	github.com/bmatcuk/doublestar/v4 v4.10.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/rodaine/table v1.3.0
 	github.com/stretchr/testify v1.10.0
